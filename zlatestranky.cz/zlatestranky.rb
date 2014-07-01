@@ -35,12 +35,11 @@ PROJECTS = [
 ]
 DST_DIR     = './archive'
 
-def search_page(name, url, counter = 0)
+def search_page(name, url, counter = 1)
   paged_url = url.sub('@', counter.to_s)
   puts ">>> #{name} search on page: #{paged_url}"
   page = `curl --silent #{paged_url}`
   html = Nokogiri::HTML(page)
-  puts html
 
   records = html.xpath(XPATH_RECORDS)
   records.each do |record|
