@@ -18,7 +18,7 @@ PROJECTS = [
   #   'url' => 'http://www.zlatestranky.cz/hledani/projektanti+projektov%C3%A1n%C3%AD+bl%C3%ADzko+Praha,+okres+Hlavn%C3%AD+m%C4%9Bsto+Praha/@'
   # }, {
     'name' => 'projektanti',
-    'url' => 'http://www.zlatestranky.cz/firmy/-/q_projektanti,+projektován%C3%AD/@/?f_c=Brno&fb=0&crc=oRVh271rcoEnUP7Llouzlw=='
+    'url' => 'http://www.zlatestranky.cz/firmy/-/q_projektanti,+projektov%C3%A1n%C3%AD/@/?f_c=Brno&fb=0&crc=oRVh271rcoEnUP7Llouzlw=='
   }, {
   #   'name' => 'architekti_praha',
   #   'url' => 'http://www.zlatestranky.cz/firmy/-/q_architekti/@/?f_c=Praha&fb=0&crc=fq811uZoYBjrVC7ymzN%2ftA%3d%3d'
@@ -27,10 +27,10 @@ PROJECTS = [
   #   'url' => 'http://www.zlatestranky.cz/firmy/-/q_architekti/@/?fb=0&f_c=Brno&crc=oRVh271rcoEnUP7Llouzlw%3d%3d'
   # }, {
     'name' => 'vytahy_praha',
-    'url' => 'http://www.zlatestranky.cz/firmy/-/q_výtahy/@/?f_c=Praha&fb=0&crc=fq811uZoYBjrVC7ymzN%2ftA%3d%3d'
+    'url' => 'http://www.zlatestranky.cz/firmy/-/q_architekti/@/?f_c=Praha&fb=0&crc=fq811uZoYBjrVC7ymzN%2ftA%3d%3d'
   }, {
     'name' => 'vytahy_brno',
-    'url' => 'http://www.zlatestranky.cz/firmy/-/q_výtahy/@/?fb=0&f_c=Brno&crc=oRVh271rcoEnUP7Llouzlw%3d%3d'
+    'url' => 'http://www.zlatestranky.cz/firmy/-/q_v%C3%BDtahy/@/?fb=0&f_c=Brno&crc=oRVh271rcoEnUP7Llouzlw%3d%3d'
   }
 ]
 DST_DIR     = './archive'
