@@ -95,4 +95,6 @@ PROJECTS.each do |project|
 
   File.delete(file) if File.exists?(file)
   search_page(name, url)
+  `ssconvert #{file} #{file}.xls`
+
 end
