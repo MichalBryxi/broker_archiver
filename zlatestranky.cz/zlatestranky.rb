@@ -17,20 +17,20 @@ PROJECTS = [
   #   'name' => 'projektanti_praha',
   #   'url' => 'http://www.zlatestranky.cz/hledani/projektanti+projektov%C3%A1n%C3%AD+bl%C3%ADzko+Praha,+okres+Hlavn%C3%AD+m%C4%9Bsto+Praha/@'
   # }, {
-    'name' => 'projektanti',
+    'name' => 'projektanti_brno',
     'url' => 'http://www.zlatestranky.cz/firmy/-/q_projektanti,+projektov%C3%A1n%C3%AD/@/?f_c=Brno&fb=0&crc=oRVh271rcoEnUP7Llouzlw=='
-  }, {
+  # }, {
   #   'name' => 'architekti_praha',
   #   'url' => 'http://www.zlatestranky.cz/firmy/-/q_architekti/@/?f_c=Praha&fb=0&crc=fq811uZoYBjrVC7ymzN%2ftA%3d%3d'
   # }, {
   #   'name' => 'architekti_brno',
   #   'url' => 'http://www.zlatestranky.cz/firmy/-/q_architekti/@/?fb=0&f_c=Brno&crc=oRVh271rcoEnUP7Llouzlw%3d%3d'
   # }, {
-    'name' => 'vytahy_praha',
-    'url' => 'http://www.zlatestranky.cz/firmy/-/q_architekti/@/?f_c=Praha&fb=0&crc=fq811uZoYBjrVC7ymzN%2ftA%3d%3d'
-  }, {
-    'name' => 'vytahy_brno',
-    'url' => 'http://www.zlatestranky.cz/firmy/-/q_v%C3%BDtahy/@/?fb=0&f_c=Brno&crc=oRVh271rcoEnUP7Llouzlw%3d%3d'
+  #   'name' => 'vytahy_praha',
+  #   'url' => 'http://www.zlatestranky.cz/firmy/-/q_architekti/@/?f_c=Praha&fb=0&crc=fq811uZoYBjrVC7ymzN%2ftA%3d%3d'
+  # }, {
+  #   'name' => 'vytahy_brno',
+  #   'url' => 'http://www.zlatestranky.cz/firmy/-/q_v%C3%BDtahy/@/?fb=0&f_c=Brno&crc=oRVh271rcoEnUP7Llouzlw%3d%3d'
   }
 ]
 DST_DIR     = './archive'
@@ -38,7 +38,7 @@ DST_DIR     = './archive'
 def search_page(name, url, counter = 1)
   paged_url = url.sub('@', counter.to_s)
   puts ">>> #{name} search on page: #{paged_url}"
-  page = `curl --silent #{paged_url}`
+  page = `curl --silent '#{paged_url}'`
   html = Nokogiri::HTML(page)
 
   records = html.xpath(XPATH_RECORDS)
