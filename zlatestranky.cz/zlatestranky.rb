@@ -6,31 +6,31 @@ require 'fileutils'
 
 LOOPS=99
 XPATH_RECORDS='//section[@class="listings"]/ol/li'
-XPATH_COMPANY='//section/div/div/h1/a'
-XPATH_ADDRESS='//section/div[1]/div[1]/ul/li[1]/address'
-XPATH_WEB='//section/div[1]/div[1]/ul/li[2]/a[@data-ta="LinkClick"]'
-XPATH_MAIL='//section/div[1]/div[1]/ul/li[2]/a[@data-ta="EmailClick"]'
+XPATH_COMPANY='//h1/a'
+XPATH_ADDRESS='//address'
+XPATH_WEB='//a[@data-ta="LinkClick"]'
+XPATH_MAIL='//a[@data-ta="EmailClick"]'
 XPATH_PHONE='//i[@class="fa fa-phone"]/..'
 
 PROJECTS = [
   {
-  #   'name' => 'projektanti_praha',
-  #   'url' => 'http://www.zlatestranky.cz/hledani/projektanti+projektov%C3%A1n%C3%AD+bl%C3%ADzko+Praha,+okres+Hlavn%C3%AD+m%C4%9Bsto+Praha/@'
-  # }, {
+    'name' => 'projektanti_praha',
+    'url' => 'http://www.zlatestranky.cz/hledani/projektanti+projektov%C3%A1n%C3%AD+bl%C3%ADzko+Praha,+okres+Hlavn%C3%AD+m%C4%9Bsto+Praha/@'
+  }, {
     'name' => 'projektanti_brno',
     'url' => 'http://www.zlatestranky.cz/firmy/-/q_projektanti,+projektov%C3%A1n%C3%AD/@/?f_c=Brno&fb=0&crc=oRVh271rcoEnUP7Llouzlw=='
-  # }, {
-  #   'name' => 'architekti_praha',
-  #   'url' => 'http://www.zlatestranky.cz/firmy/-/q_architekti/@/?f_c=Praha&fb=0&crc=fq811uZoYBjrVC7ymzN%2ftA%3d%3d'
-  # }, {
-  #   'name' => 'architekti_brno',
-  #   'url' => 'http://www.zlatestranky.cz/firmy/-/q_architekti/@/?fb=0&f_c=Brno&crc=oRVh271rcoEnUP7Llouzlw%3d%3d'
-  # }, {
-  #   'name' => 'vytahy_praha',
-  #   'url' => 'http://www.zlatestranky.cz/firmy/-/q_architekti/@/?f_c=Praha&fb=0&crc=fq811uZoYBjrVC7ymzN%2ftA%3d%3d'
-  # }, {
-  #   'name' => 'vytahy_brno',
-  #   'url' => 'http://www.zlatestranky.cz/firmy/-/q_v%C3%BDtahy/@/?fb=0&f_c=Brno&crc=oRVh271rcoEnUP7Llouzlw%3d%3d'
+  }, {
+    'name' => 'architekti_praha',
+    'url' => 'http://www.zlatestranky.cz/firmy/-/q_architekti/@/?f_c=Praha&fb=0&crc=fq811uZoYBjrVC7ymzN%2ftA%3d%3d'
+  }, {
+    'name' => 'architekti_brno',
+    'url' => 'http://www.zlatestranky.cz/firmy/-/q_architekti/@/?fb=0&f_c=Brno&crc=oRVh271rcoEnUP7Llouzlw%3d%3d'
+  }, {
+    'name' => 'vytahy_praha',
+    'url' => 'http://www.zlatestranky.cz/firmy/-/q_architekti/@/?f_c=Praha&fb=0&crc=fq811uZoYBjrVC7ymzN%2ftA%3d%3d'
+  }, {
+    'name' => 'vytahy_brno',
+    'url' => 'http://www.zlatestranky.cz/firmy/-/q_v%C3%BDtahy/@/?fb=0&f_c=Brno&crc=oRVh271rcoEnUP7Llouzlw%3d%3d'
   }
 ]
 DST_DIR     = './archive'
@@ -95,6 +95,6 @@ PROJECTS.each do |project|
 
   File.delete(file) if File.exists?(file)
   search_page(name, url)
-  `ssconvert --export-type=Gnumeric_Excel:xlsx2 #{file} archive/text.xlsx`
+  #`ssconvert --export-type=Gnumeric_Excel:xlsx2 #{file} archive/text.xlsx`
 
 end
